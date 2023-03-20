@@ -1,9 +1,15 @@
 version: "3"
+
 services:
   backend:
     build: .
     ports:
-      - 3000:3000
+      - 3001:3000
   mydb:
     image: mongo
     restart: always
+    volumes:
+      - web_data:/data/db
+      
+volumes:
+  web_data:
